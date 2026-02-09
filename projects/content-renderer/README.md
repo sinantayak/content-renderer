@@ -155,4 +155,4 @@ Sinan Tayak
 ## 🔗 Bağlantılar
 
 - [NPM Package](https://www.npmjs.com/package/@sinantayak/content-renderer)
-- [GitHub Repository](#)
+- [GitHub Repository](https://github.com/sinantayak/content-renderer)

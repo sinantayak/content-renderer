@@ -3,5 +3,67 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "content-renderer": {
+      "projectType": "library",
+      "root": "projects/content-renderer",
+      "sourceRoot": "projects/content-renderer/src",
+      "prefix": "tyk",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/content-renderer/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/content-renderer/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/content-renderer/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/content-renderer/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "d410b2b7-7612-4019-a3a0-6a6ecde50941"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
   }
 }
