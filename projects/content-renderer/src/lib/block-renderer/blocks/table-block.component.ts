@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 
 
 @Component({
-    selector: 'app-table-block-display',
-    imports: [],
-    template: `
+  selector: 'app-table-block-display',
+  imports: [],
+  template: `
     <div class="table-container">
       <table>
         <thead>
@@ -26,11 +26,12 @@ import { Component, Input } from '@angular/core';
       </table>
     </div>
   `,
-    styles: [`
+  styles: [`
     .table-container {
       overflow-x: auto;
       border-radius: 12px;
       border: 1px solid #e5e7eb;
+      margin: 1.5rem 0;
     }
 
     table {
@@ -48,11 +49,11 @@ import { Component, Input } from '@angular/core';
     th {
       background: #f9fafb;
       font-weight: 600;
-      color: #374151;
+      color: #1a1d23;
     }
 
     td {
-      color: #4b5563;
+      color: #2d3039;
     }
 
     tr:last-child td {

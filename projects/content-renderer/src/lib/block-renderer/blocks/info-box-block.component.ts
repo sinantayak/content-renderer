@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 
 
 @Component({
-    selector: 'app-info-box-block-display',
-    imports: [],
-    template: `
+  selector: 'app-info-box-block-display',
+  imports: [],
+  template: `
     <div class="info-box" [class]="data.boxType">
       <div class="info-box-container">
         <span class="material-symbols-outlined icon">{{ getIconName() }}</span>
@@ -17,7 +17,7 @@ import { Component, Input } from '@angular/core';
       </div>
     </div>
   `,
-    styles: [`
+  styles: [`
     .info-box {
       margin: 32px 0;
       border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
@@ -43,8 +43,6 @@ import { Component, Input } from '@angular/core';
     .info-title {
       font-size: 0.875rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
       margin: 0 0 4px 0;
     }
 

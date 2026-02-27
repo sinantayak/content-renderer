@@ -7,7 +7,10 @@ export type BlockType =
   | 'table'
   | 'button'
   | 'infoBox'
-  | 'codeBlock';
+  | 'codeBlock'
+  | 'richText'
+  | 'phoneEmulator'
+  | 'video';
 
 export interface ContentBlock {
   type: BlockType;

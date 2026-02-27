@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 
 
 @Component({
-    selector: 'app-code-block-display',
-    imports: [],
-    template: `
+  selector: 'app-code-block-display',
+  imports: [],
+  template: `
     <div class="code-block-wrapper">
       <div class="code-container">
         <pre><code class="font-mono text-sm">{{ data.code }}</code></pre>
@@ -14,9 +14,9 @@ import { Component, Input } from '@angular/core';
       </div>
     </div>
   `,
-    styles: [`
+  styles: [`
     .code-block-wrapper {
-      margin: 24px 0;
+      margin: 1.5rem 0;
     }
 
     .code-container {

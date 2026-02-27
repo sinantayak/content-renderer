@@ -11,10 +11,13 @@ import { TableBlockDisplayComponent } from './blocks/table-block.component';
 import { ButtonBlockDisplayComponent } from './blocks/button-block.component';
 import { InfoBoxBlockDisplayComponent } from './blocks/info-box-block.component';
 import { CodeBlockDisplayComponent } from './blocks/code-block.component';
+import { RichTextBlockDisplayComponent } from './blocks/rich-text-block.component';
+import { PhoneEmulatorBlockDisplayComponent } from './blocks/phone-emulator-block.component';
+import { VideoBlockDisplayComponent } from './blocks/video-block.component';
 
 @Component({
-    selector: 'tyk-content-renderer',
-    imports: [
+  selector: 'tyk-content-renderer',
+  imports: [
     HeadingBlockDisplayComponent,
     ParagraphBlockDisplayComponent,
     ListBlockDisplayComponent,
@@ -22,9 +25,12 @@ import { CodeBlockDisplayComponent } from './blocks/code-block.component';
     TableBlockDisplayComponent,
     ButtonBlockDisplayComponent,
     InfoBoxBlockDisplayComponent,
-    CodeBlockDisplayComponent
-],
-    template: `
+    CodeBlockDisplayComponent,
+    RichTextBlockDisplayComponent,
+    PhoneEmulatorBlockDisplayComponent,
+    VideoBlockDisplayComponent
+  ],
+  template: `
     <div class="block-renderer">
       @for (block of blocks; track block.id) {
         <div class="block">
@@ -56,12 +62,21 @@ import { CodeBlockDisplayComponent } from './blocks/code-block.component';
             @case ('codeBlock') {
               <app-code-block-display [data]="block.data"></app-code-block-display>
             }
+            @case ('richText') {
+              <app-rich-text-block-display [data]="block.data"></app-rich-text-block-display>
+            }
+            @case ('phoneEmulator') {
+              <app-phone-emulator-block-display [data]="block.data"></app-phone-emulator-block-display>
+            }
+            @case ('video') {
+              <app-video-block-display [data]="block.data"></app-video-block-display>
+            }
           }
         </div>
       }
     </div>
   `,
-    styles: [`
+  styles: [`
     .block-renderer {
       display: flex;
       flex-direction: column;

@@ -1,23 +1,23 @@
 import { Component, Input } from '@angular/core';
 
-
 @Component({
-  selector: 'app-image-block-display',
-  imports: [],
-  template: `
-    <figure class="image-block">
-      <img [src]="data.url" [alt]="data.alt">
+    selector: 'app-video-block-display',
+    imports: [],
+    template: `
+    <figure class="video-block">
+      <video [src]="data.url" controls preload="metadata" class="video-player"></video>
       @if (data.caption) {
         <figcaption>{{ data.caption }}</figcaption>
       }
     </figure>
   `,
-  styles: [`
-    .image-block {
+    styles: [`
+    .video-block {
       margin: 1.5rem 0;
     }
 
-    img {
+    .video-player {
+      width: 100%;
       max-width: 100%;
       height: auto;
       border-radius: 12px;
@@ -28,11 +28,11 @@ import { Component, Input } from '@angular/core';
       text-align: center;
       font-size: 14px;
       color: #4b5059;
-      margin-top: 0;
+      margin-top: 8px;
       font-style: italic;
     }
   `]
 })
-export class ImageBlockDisplayComponent {
-  @Input() data: any;
+export class VideoBlockDisplayComponent {
+    @Input() data: any;
 }

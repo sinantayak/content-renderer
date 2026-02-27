@@ -2,60 +2,66 @@ import { Component, Input } from '@angular/core';
 
 
 @Component({
-    selector: 'app-button-block-display',
-    imports: [],
-    template: `
+  selector: 'app-button-block-display',
+  imports: [],
+  template: `
     <div class="button-block">
       <a [href]="data.url" [class]="'btn btn-' + data.style" target="_blank">
         {{ data.label }}
       </a>
     </div>
   `,
-    styles: [`
+  styles: [`
     .button-block {
       display: flex;
+      margin: 1.25rem 0;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 24px;
+      padding: 12px 32px;
       border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 0.9375rem;
+      font-weight: 700;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #003acc;
       color: white;
+      box-shadow: 0 4px 14px rgba(0, 58, 204, 0.25);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      box-shadow: 0 6px 16px rgba(0, 58, 204, 0.35);
     }
 
     .btn-secondary {
-      background: #1f2937;
+      background: #1e293b;
       color: white;
     }
 
     .btn-secondary:hover {
-      background: #374151;
+      background: #334155;
+      transform: translateY(-2px);
     }
 
     .btn-outline {
-      background: transparent;
-      border: 2px solid #667eea;
-      color: #667eea;
+      background: white;
+      border: 2px solid #003acc;
+      color: #003acc;
+      box-shadow: none;
     }
 
     .btn-outline:hover {
-      background: #667eea;
-      color: white;
+      background: rgba(0, 58, 204, 0.05);
+      transform: translateY(-2px);
     }
   `]
 })
